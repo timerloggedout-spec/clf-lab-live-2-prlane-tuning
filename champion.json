@@ -1,0 +1,24 @@
+{
+  "family": "live-2-prlane-tuning",
+  "cell_id": "g0-linear-svm-tfidf-char-raw-813c27",
+  "gen": 0,
+  "model": "linear-svm",
+  "model_level": {
+    "C": 0.5
+  },
+  "features": "tfidf-char",
+  "features_level": {
+    "ngram_max": 5
+  },
+  "layer": "raw",
+  "macro_f1": 0.9917,
+  "macro_f1_std": 0.0099,
+  "acc": 0.9926,
+  "gold_acc": null,
+  "n_rows": 945,
+  "data_sha": "efae96d136ae84c34289bce6757127dc741c3e30",
+  "commit": "19e2b71afd0631b6b2f8838d658b8b30a00e2de3",
+  "node": "actions",
+  "promoted_ts": "2026-11-19T09:09:11Z",
+  "history": []
+}
