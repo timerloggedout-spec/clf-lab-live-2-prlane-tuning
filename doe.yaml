@@ -1,6 +1,6 @@
 schema: clf-lab-doe/v1
 family: live-2-prlane-tuning
-generation: 18
+generation: 19
 data_sha: null
 design: fractional-factorial
 design_note: '1/3 fraction: (feature_idx + layer_idx) mod 3 = model_idx mod 3'
@@ -122,107 +122,105 @@ factors:
 cells:
 - model: nb
   model_level:
-    alpha: 4.0
-  features: tfidf-word
-  features_level:
-    ngram_max: 4
-  layer: dedup
-  id: g18-nb-tfidf-word-dedup-6ec977
-- model: nb
-  model_level:
-    alpha: 8.0
+    alpha: 2.0
   features: tfidf-word
   features_level:
     ngram_max: 3
-  layer: dedup
-  id: g18-nb-tfidf-word-dedup-dfa2c6
+  layer: raw
+  id: g19-nb-tfidf-word-raw-fa8c5d
 - model: nb
   model_level:
     alpha: 2.0
   features: tfidf-word
   features_level:
     ngram_max: 4
-  layer: raw
-  id: g18-nb-tfidf-word-raw-efd9d9
+  layer: dedup
+  id: g19-nb-tfidf-word-dedup-b7f985
 - model: nb
   model_level:
-    alpha: 4.0
-  features: tfidf-word
-  features_level:
-    ngram_max: 3
-  layer: raw
-  id: g18-nb-tfidf-word-raw-f01e27
-- model: nb
-  model_level:
-    alpha: 4.0
+    alpha: 2.0
   features: hashing
   features_level:
     log2_features: 16
   layer: raw
-  id: g18-nb-hashing-raw-79a69d
+  id: g19-nb-hashing-raw-5ad852
 - model: nb
   model_level:
-    alpha: 4.0
-  features: tfidf-word
-  features_level:
-    ngram_max: 4
-  layer: augmented
-  id: g18-nb-tfidf-word-augmented-97aac4
-- model: nb
-  model_level:
-    alpha: 8.0
-  features: tfidf-word
-  features_level:
-    ngram_max: 2
-  layer: raw
-  id: g18-nb-tfidf-word-raw-f4ea67
-- model: nb
-  model_level:
-    alpha: 8.0
-  features: tfidf-word
-  features_level:
-    ngram_max: 4
-  layer: raw
-  id: g18-nb-tfidf-word-raw-4ddca2
-- model: nb
-  model_level:
-    alpha: 8.0
-  features: tfidf-word
-  features_level:
-    ngram_max: 3
-  layer: augmented
-  id: g18-nb-tfidf-word-augmented-d0478f
-- model: nb
-  model_level:
-    alpha: 4.0
+    alpha: 2.0
   features: tfidf-char
   features_level:
     ngram_max: 5
   layer: raw
-  id: g18-nb-tfidf-char-raw-154499
+  id: g19-nb-tfidf-char-raw-658856
+- model: nb
+  model_level:
+    alpha: 2.0
+  features: tfidf-word
+  features_level:
+    ngram_max: 4
+  layer: augmented
+  id: g19-nb-tfidf-word-augmented-2189a7
+- model: nb
+  model_level:
+    alpha: 1.0
+  features: tfidf-word
+  features_level:
+    ngram_max: 4
+  layer: raw
+  id: g19-nb-tfidf-word-raw-4e3945
+- model: nb
+  model_level:
+    alpha: 2.0
+  features: tfidf-word
+  features_level:
+    ngram_max: 3
+  layer: dedup
+  id: g19-nb-tfidf-word-dedup-7096d9
+- model: nb
+  model_level:
+    alpha: 2.0
+  features: hashing
+  features_level:
+    log2_features: 16
+  layer: dedup
+  id: g19-nb-hashing-dedup-a0efe3
 - model: small-gbm
   model_level:
     lr: 0.1
     max_iter: 100
     svd: 64
+  features: tfidf-word
+  features_level:
+    ngram_max: 3
+  layer: augmented
+  id: g19-small-gbm-tfidf-word-augmented-43ed3a
+- model: logreg
+  model_level:
+    C: 1.0
+  features: tfidf-word
+  features_level:
+    ngram_max: 3
+  layer: dedup
+  id: g19-logreg-tfidf-word-dedup-a9c6e1
+- model: linear-svm
+  model_level:
+    C: 2.0
   features: tfidf-char
   features_level:
     ngram_max: 5
-  layer: raw
-  id: g18-small-gbm-tfidf-char-raw-cc46fb
-- model: small-gbm
-  model_level:
-    lr: 0.1
-    max_iter: 100
-    svd: 64
-  features: hashing
-  features_level:
-    log2_features: 16
   layer: augmented
-  id: g18-small-gbm-hashing-augmented-3da0ee
+  id: g19-linear-svm-tfidf-char-augmented-9073f9
+- model: nb
+  model_level:
+    alpha: 2.0
+  features: tfidf-word
+  features_level:
+    ngram_max: 3
+  layer: augmented
+  id: g19-nb-tfidf-word-augmented-20c888
 parent_top:
-- g17-nb-tfidf-word-raw-bf07b2
-- g17-nb-tfidf-word-raw-bf07b2
-- g17-nb-tfidf-word-raw-5ffd6d
+- g18-nb-tfidf-word-raw-efd9d9
+- g18-nb-tfidf-word-raw-efd9d9
+- g18-nb-tfidf-word-raw-efd9d9
 minted_levels: []
-generated_ts: '2026-11-27T21:16:08Z'
+generated_ts: '2026-11-28T07:48:24Z'
